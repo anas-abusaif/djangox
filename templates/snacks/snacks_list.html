@@ -1,0 +1,14 @@
+{% extends '_base.html' %}
+
+
+{% block content %}
+<nav>
+  <a href="{% url 'snacks_list' %}">List</a>
+<a href="{% url 'snack_create' %}">Create Snack</a>
+</nav>
+
+  {% for snack in snacks_list %}
+  <h2><a href="{{ snack.get_absolute_url }}">{{snack}}</a></h2>
+  {% endfor %}
+
+{% endblock content %}
